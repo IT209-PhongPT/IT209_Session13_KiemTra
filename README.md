@@ -1,3 +1,42 @@
+# Bài Kiểm Tra Đầu Giờ — Đóng Gói Và Chạy Campus Hub Với Docker
+
+- **Họ và tên:** Phạm Thanh Phong
+- **Mã sinh viên:** N24DTCN120
+- **Học phần:** IT209
+
+---
+
+## 1. Lệnh Khởi Chạy Hệ Thống
+
+```powershell
+# Chạy hệ thống với Docker Compose (Backend + MySQL)
+docker compose up -d --build
+
+# Xem trạng thái các container
+docker compose ps
+
+# Dừng hệ thống
+docker compose down
+```
+
+## 2. Cổng và URL Kiểm Tra
+
+- **Backend API Base URL:** `http://localhost:8080`
+- **Actuator Health Check:** `http://localhost:8080/actuator/health`
+
+## 3. Minh Chứng Kết Quả Thực Hiện
+
+### Minh chứng 1: Docker Image đã build thành công (`docker images`)
+![Docker Images](screenshots/docker-images.png)
+
+### Minh chứng 2: Trạng thái các service sau khi chạy Compose (`docker compose ps`)
+![Docker Compose PS](screenshots/docker-compose-ps.png)
+
+### Minh chứng 3: Kết quả gọi `/actuator/health` (HTTP 200, status UP)
+![Actuator Health](screenshots/actuator-health.png)
+
+---
+
 # Campus Hub Base
 
 Campus Hub là dự án nền cho Mini Project Session 13. Ứng dụng cung cấp một không gian chung để sinh viên đăng sự kiện, tìm đồ thất lạc, hỏi đáp, trao đổi đồ dùng và tìm nhóm.
